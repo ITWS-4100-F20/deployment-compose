@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  united-ui:
+    image: united-ui:latest
+    ports: 
+      - "80:80"
+    links:
+      - gateway-service
+  gateway-service:
+    image: gateway-service:latest
+    ports:
+      - "3030:3030"
+    links:
+      - analytics-engine
+  analytics-engine: 
+    image: analytics-engine:latest
+    ports:
+      - "3031:3031"
