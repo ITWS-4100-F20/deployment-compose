@@ -2,7 +2,7 @@
 
  This document contains information about the data stored in the Mongo Database for this project. Each collection has a specific data type that can be inserted from the API or from running simulations
 
-## scenarios
+## Scenarios
 
 **Example Object:**
 ```json
@@ -138,16 +138,47 @@ Contains all relevant data for each passenger during a simulation
 **Description:**
 Contains the same information as Simulation_Passengers, with volunteers only. This is updated real-time during the simulation itself. 
 
-## NewoBj
+## Model_Definitions
 **Example Object:**
 ```json
-\
+{
+	"_id" : ObjectId("5fd522c8f2f54402b0cdf4ff"),
+	"name" : "Example_definition",
+	"compModel" : "Example_comp",
+	"passModel" : "Example_pass",
+	"dataModel" : "Example_Passenger",
+	"pass_target" : "comp-target",
+	"comp_target" : "comp_amount",
+	"ignore_pass" : [
+		"pass-result",
+		"comp-target"
+	],
+	"ignore_comp" : [
+		"pass-result"
+	],
+	"keys" : [
+		"comp-target",
+		"pass-result",
+		"pass_volunteer_method",
+		"pass_name",
+		"pass_final_dest",
+		"pass_baggage",
+		"pass_age",
+		"pass_gender",
+		"pass_memberlevel",
+		"pass_miles",
+		"comp_type",
+		"comp_amount",
+		"comp_timeleft"
+	]
+}
 ```
 **Description:**
+Using the model/definition endpoint, a user can create a new machine learning model with different data for the parameters. 
+## Other Collections
 
-## NewoBj
-**Example Object:**
-```json
-\
-```
-**Description:**
+**Schemas:**
+Generated after using the schema creation endpoint
+**Models:**
+Generated after creating a new model definition
+
